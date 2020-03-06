@@ -1,0 +1,175 @@
+Höhenkirchen,Siegertsbrunn
+Höhenkirchen,Hohenbrunn
+Höhenkirchen,Merck-Schuchardt
+Siegertsbrunn,Merck-Schuchardt
+Hohenbrunn,Merck-Schuchardt
+Brunnthal,Höhenkirchen
+Hofolding,Brunnthal
+Hofolding,Höhenkirchen
+Hofolding,Siegertsbrunn
+Aying,Hofolding
+Großhelfendorf,Aying
+Großhelfendorf,Hofolding
+Sauerlach,Hofolding
+Sauerlach,Brunnthal
+Arget,Sauerlach
+Altkirchen,Sauerlach
+Altkirchen,Arget
+Oberbiberg,Altkirchen
+Oberhaching,Oberbiberg
+Oberhaching,Brunnthal
+Oberhaching,Sauerlach
+Taufkirchen,Oberhaching
+Unterhaching,Taufkirchen
+Unterbiberg,Unterhaching
+Uni-BW,Unterbiberg
+Uni-BW,Unterhaching
+Neubiberg,Uni-BW
+Ottobrunn,Unterhaching
+Ottobrunn,Neubiberg
+Ottobrunn,Hohenbrunn
+IABG,Ottobrunn
+IABG,Hohenbrunn
+IABG,Taufkirchen
+Harthausen,Siegertsbrunn
+Grasbrunn,Harthausen
+Putzbrunn,Grasbrunn
+Putzbrunn,Hohenbrunn
+Putzbrunn,Neubiberg
+Haar,Putzbrunn
+Haar,Grasbrunn
+Isar-Amper,Haar
+Waldtrudering,Haar
+Trudering,Waldtrudering
+Michaeliburg,Trudering
+München 9,Michaeliburg
+München 9,Neubiberg
+Waldperlach,Neubiberg
+Waldperlach,München 9
+Waldperlach,Putzbrunn
+Perlach,Unterbiberg
+Perlach,München 9
+Perlach,Michaeliburg
+Huber Group,Heimstetten
+Kirchheim,Huber Group
+Kirchheim,Heimstetten
+Aschheim,Kirchheim
+Feldkirchen,Aschheim
+Feldkirchen,Huber Group
+Feldkirchen,Haar
+Dornach,Aschheim
+München 10,Dornach
+München 10,Feldkirchen
+München 10,Trudering
+Riem,München 10
+München 5,Michaeliburg
+München 5,Perlach
+Englschalking,München 5
+Englschalking,Riem
+Englschalking,Trudering
+Oberföhring,Englschalking
+München 8,Oberföhring
+München 8,Englschalking
+München 8,Aschheim
+Unterföhring,München 8
+Unterföhring,Oberföhring
+Freimann,Oberföhring
+Freimann,Unterföhring
+Dingharting,Oberbiberg
+Straßlach,Dingharting
+Ebenhausen,Dingharting
+Hohenschäftlarn,Ebenhausen
+Hohenschäftlarn,Dingharting
+Baierbrunn,Hohenschäftlarn
+United Initiators,Baierbrunn
+Linde AG,United Initiators
+Grünwald,Oberhaching
+Grünwald,Linde AG
+Grünwald,United Initiators
+Grünwald,Straßlach
+Pullach,Linde AG
+Bavaria Film,Grünwald
+Solln,Pullach
+Neufahrn,Hohenschäftlarn
+Neufahrn,Ebenhausen
+Bavaria Film,München 5
+Bavaria Film,München 2
+Forstenried,Solln
+München 2,Solln
+München 2,Forstenried
+Sendling,München 2
+Großhadern,München 2
+Großhadern,Sendling
+Neuried,Großhadern
+Neuried,Forstenried
+Gräfelfing,Großhadern
+Planegg,Gräfelfing
+Planegg,Neuried
+München 2,München 5
+Aubing,Gräfelfing
+München 6,Aubing
+München 6,Gräfelfing
+München 6,Großhadern
+Obermenzing,München 6
+Moosach,Obermenzing
+München 4,Moosach
+München 3,Sendling
+München 4,München 3
+Stadtmitte,München 4
+München 4,München 1
+München 1,München 3
+München 1,München 5
+BMW,Stadtmitte
+BMW,Moosach
+München 7,BMW
+München 7,Freimann
+Harthof,Freimann
+Harthof,München 7
+Feldmoching,Harthof
+Feldmoching,München 7
+Feldmoching,Moosach
+Ludwigsfeld,Moosach
+Langwied,Obermenzing
+Langwied,Aubing
+Allach,Obermenzing
+Krauss Maffei,Ludwigsfeld
+Krauss Maffei,Allach
+MTU-MAN,Allach
+MTU-MAN,Ludwigsfeld
+MTU-MAN,Feldmoching
+Ismaning,Aschheim
+Ismaning,Unterföhring
+Garching,Ismaning
+Garching,Freimann
+Hochbrück,Garching
+Helmholtz,Freimann
+Helmholtz,Harthof
+Helmholtz,Hochbrück
+Oberschleißheim,Helmholtz
+Oberschleißheim,Hochbrück
+Oberschleißheim,Feldmoching
+Badersfeld,Oberschleißheim
+Riedmoos,Badersfeld
+Riedmoos,Oberschleißheim
+Unterschleißheim,Riedmoos
+Unterschleißheim,Oberschleißheim
+Unterschleißheim,Hochbrück
+Eching,Unterschleißheim
+TUM,Garching
+TUM,Eching
+Dietersheim,Eching
+Dietersheim,TUM
+Günzenhausen,Eching
+Günzenhausen,Unterschleißheim
+Fürholzen,Günzenhausen
+Neufahrn b. Freising,Eching
+Mintraching,Neufahrn b. Freising
+Mintraching,Dietersheim
+Goldach,Mintraching
+Hallbergmoos,Goldach
+Hetzenhausen,Fürholzen
+Massenhausen,Fürholzen
+Massenhausen,Hetzenhausen
+Massenhausen,Neufahrn b. Freising
+Flughafen,Mintraching
+Flughafen,Hallbergmoos
