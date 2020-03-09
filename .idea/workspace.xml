@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="304ce421-f589-4c26-af72-35b8d64a5b41" name="Default Changelist" comment="" />
+    <list default="true" id="304ce421-f589-4c26-af72-35b8d64a5b41" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lss.py" beforeDir="false" afterPath="$PROJECT_DIR$/lss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/verbindungen.csv" beforeDir="false" afterPath="$PROJECT_DIR$/verbindungen.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wehren.csv" beforeDir="false" afterPath="$PROJECT_DIR$/wehren.csv" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +22,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YhaTpZL7yPQVI2vTIiVKolGb7O" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -99,5 +111,16 @@
       <updated>1583397291065</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
