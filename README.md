@@ -1,6 +1,6 @@
 # lss
 
-start with: python3 lss.py
+start with: ```python3 lss.py```
 
 packages used:
 - csv
