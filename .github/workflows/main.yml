@@ -45,9 +45,9 @@ jobs:
     - name: Copy files
       run: |
         mkdir ./archive
-        mkdir ./archive/lss
-        mkdir ./archive/lss/dist
-        copy ./lss/dist/* ./archive/lss/dist/
+        mkdir ./archive/dist
+        mkdir ./archive/dist/lss
+        copy ./dist/lss/* ./archive/dist/lss/
         copy ./wehren.csv ./archive/
         copy ./verbindungen.csv ./archive/
         copy ./settings.csv ./archive/
