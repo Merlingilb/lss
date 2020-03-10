@@ -2,12 +2,6 @@
 
 name: Release
 
-
-inputs:
-  release_name:
-    description: 'Name of Release'
-    required: true
-
 # Controls when the action will run. Triggers the workflow on push or pull request 
 # events but only for the master branch
 on:
@@ -86,7 +80,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ env.commitmsg }}
-        release_name: Release ${{ github.ref }}
+        release_name: Release ${{ env.commitmsg }}
         draft: false
         prerelease: false
         
