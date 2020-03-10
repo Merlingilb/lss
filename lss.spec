@@ -7,7 +7,6 @@ block_cipher = None
 
 
 a = Analysis(['lss.py'],
-             pathex=['C:\\Users\\eberh_da\\PycharmProjects\\lss'],
              binaries=[],
              datas=[],
              hiddenimports=[],
