@@ -1,10 +1,4 @@
 # lss
 
-start with: ```python3 lss.py```
+start with: ```start.bat```
 
-packages used:
-- csv
-- matplotlib.pyplot
-- networkx
-- convert
-- tkinter
