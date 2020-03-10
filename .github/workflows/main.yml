@@ -44,4 +44,4 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: my-artifact
-        path: ./dist/lss/*
+        path: ./dist/lss
