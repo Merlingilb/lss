@@ -67,7 +67,7 @@ jobs:
         name: Feuerwachenplaner
     
     - name: Zip Folder
-      run: zip -r Feuerwachenplaner.zip . -i ./archive/*
+      run: zip -r Feuerwachenplaner.zip . -i ./*
     
     - name: Create Release
       id: create_release
