@@ -33,7 +33,7 @@ jobs:
         pip install networkx
         pip install tornado
         pip install matplotlib
-        pip install pyyaml==3.12
+        pip install pyyaml
         pip install pypiwin32
         pip install pefile
         pip install pyinstaller
