@@ -56,9 +56,18 @@ jobs:
         name: Feuerwachenplaner
         path: ./archive/
         
+  release:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+        
     - uses: actions/download-artifact@v1
       with:
         name: Feuerwachenplaner
+    
+    - name: Zip Folder
+      run: zip -r Feuerwachenplaner.zip ./archive/
     
     - name: Create Release
       id: create_release
