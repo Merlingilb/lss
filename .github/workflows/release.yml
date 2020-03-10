@@ -68,6 +68,8 @@ jobs:
     
     - name: Zip Folder
       run: zip -r Feuerwachenplaner.zip .
+    
+    - uses: actions/checkout@v2
 
     - name: get commit message
       run: |
