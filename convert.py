@@ -1,5 +1,4 @@
 import csv
-from builtins import map
 
 
 def getWehr(list, name):
@@ -32,7 +31,10 @@ class Feuerwehr():
         self.neibors.append(wehr)
         self.neibors = list(dict.fromkeys(self.neibors))
     def getTLFs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "tlf":
@@ -53,7 +55,10 @@ class Feuerwehr():
             value += minimum/2
         return value
     def getELW1s(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "elw1":
@@ -74,7 +79,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getDLKs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "dlk":
@@ -95,7 +103,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getRWs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "rw":
@@ -116,7 +127,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getHLFs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "hlf":
@@ -137,7 +151,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getGWOELs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "gwOel":
@@ -158,7 +175,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getGWAs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "gwA":
@@ -179,7 +199,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getGWSs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "gwS":
@@ -200,7 +223,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getHOEHs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "hoeh":
@@ -221,7 +247,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getMESSs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "mess":
@@ -242,7 +271,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getGWGs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "gwG":
@@ -263,7 +295,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getELW2s(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "elw2":
@@ -284,7 +319,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getDEKONPs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "dekonP":
@@ -305,7 +343,10 @@ class Feuerwehr():
             value += minimum
         return value
     def getFWKs(self):
-        data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+        except:
+            data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
         minimum = 0
         for row in data:
             if row[0] == "fwk":
@@ -328,13 +369,19 @@ class Feuerwehr():
 
 def convert():
     wehren = []
-    data = csv.reader(open('wehren.csv', "r", encoding='ansi'))
+    try:
+        data = csv.reader(open('wehren.csv', "r", encoding='ansi'))
+    except:
+        data = csv.reader(open('../../wehren.csv', "r", encoding='ansi'))
     next(data)
     for row in data:
         wehr = Feuerwehr(row[0].strip(), row[1].strip(), row[2].strip(), row[3].strip(), row[4].strip(), row[5].strip(), row[6].strip(), row[7].strip(), row[8].strip(), row[9].strip(), row[10].strip(), row[11].strip(), row[12].strip(), row[13].strip(), row[14].strip(), row[15].strip(), row[16].strip())
         wehren.append(wehr)
 
-    data = csv.reader(open('verbindungen.csv', "r", encoding='ansi'))
+    try:
+        data = csv.reader(open('verbindungen.csv', "r", encoding='ansi'))
+    except:
+        data = csv.reader(open('../../verbindungen.csv', "r", encoding='ansi'))
     for row in data:
         getWehr(wehren,row[0].strip()).addNeibor(getWehr(wehren,row[1].strip()))
         getWehr(wehren,row[1].strip()).addNeibor(getWehr(wehren,row[0].strip()))

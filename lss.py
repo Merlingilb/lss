@@ -1,5 +1,8 @@
 import matplotlib.pyplot as plt
 import networkx as nx
+import networkx.classes.graph
+import networkx.classes
+import networkx
 import tkinter as tk
 import convert
 import csv
@@ -7,7 +10,10 @@ import csv
 def show(type):
        convert.convert()
 
-       data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+       try:
+              data = csv.reader(open('settings.csv', "r", encoding='ansi'))
+       except:
+              data = csv.reader(open('../../settings.csv', "r", encoding='ansi'))
        minimum=0
        for row in data:
               if row[0] == type:
