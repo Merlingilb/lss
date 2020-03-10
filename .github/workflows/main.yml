@@ -47,11 +47,11 @@ jobs:
         mkdir ./archive
         mkdir ./archive/dist
         mkdir ./archive/dist/lss
-        copy ./dist/lss/* ./archive/dist/lss/
-        copy ./wehren.csv ./archive/
-        copy ./verbindungen.csv ./archive/
-        copy ./settings.csv ./archive/
-        copy ./start.bat ./archive/
+        xcopy ./dist/lss/* ./archive/dist/lss/ /s /e
+        xcopy ./wehren.csv ./archive/ /s /e
+        xcopy ./verbindungen.csv ./archive/ /s /e
+        xcopy ./settings.csv ./archive/ /s /e
+        xcopy ./start.bat ./archive/ /s /e
     
     - uses: actions/upload-artifact@v1
       with:
