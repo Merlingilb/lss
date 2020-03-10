@@ -55,6 +55,10 @@ jobs:
       with:
         name: Feuerwachenplaner
         path: ./archive/
+        
+    - uses: actions/download-artifact@v1
+      with:
+        name: Feuerwachenplaner
     
     - name: Create Release
       id: create_release
@@ -66,10 +70,6 @@ jobs:
         release_name: Release ${{ github.ref }}
         draft: false
         prerelease: false
-        
-    - uses: actions/download-artifact@v1
-      with:
-        name: Feuerwachenplaner
         
     - name: Upload Release Asset
       id: upload-release-asset 
