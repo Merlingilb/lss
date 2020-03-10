@@ -42,7 +42,18 @@ jobs:
     - name: Run build.bat
       run: ./build.bat
     
+    - name: Copy files
+      run: |
+        mkdir ./archive
+        mkdir ./archive/lss
+        mkdir ./archive/lss/dist
+        cp ./lss/dist/* ./archive/lss/dist/
+        cp ./wehren.csv ./archive/
+        cp ./verbindungen.csv ./archive/
+        cp ./settings.csv ./archive/
+        cp ./start.bat ./archive/
+    
     - uses: actions/upload-artifact@v1
       with:
-        name: my-artifact
-        path: ./dist/lss
+        name: Feuerwachenplaner
+        path: ./archive/
