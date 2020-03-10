@@ -39,4 +39,4 @@ jobs:
     
     # Runs a single command using the runners shell
     - name: Run build.bat
-      run: $GITHUB_WORKSPACE/build.bat
+      run: ${{ GITHUB_WORKSPACE }}/build.bat
