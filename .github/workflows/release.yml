@@ -2,6 +2,12 @@
 
 name: Release
 
+
+inputs:
+  release_name:
+    description: 'Name of Release'
+    required: true
+
 # Controls when the action will run. Triggers the workflow on push or pull request 
 # events but only for the master branch
 on:
@@ -68,6 +74,10 @@ jobs:
     
     - name: Zip Folder
       run: zip -r Feuerwachenplaner.zip .
+
+    - name: get commit message
+      run: |
+         echo ::set-env name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})
     
     - name: Create Release
       id: create_release
@@ -75,7 +85,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
+        tag_name: ${{ env.commitmsg }}
         release_name: Release ${{ github.ref }}
         draft: false
         prerelease: false
