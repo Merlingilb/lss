@@ -67,9 +67,9 @@ jobs:
         draft: false
         prerelease: false
         
-    - uses: montudor/action-zip@v0.1.0
+    - uses: actions/download-artifact@v1
       with:
-        args: zip -qq -r ./Feuerwachenplaner.zip ./archive
+        name: Feuerwachenplaner
         
     - name: Upload Release Asset
       id: upload-release-asset 
