@@ -6,9 +6,15 @@ import networkx
 import tkinter as tk
 import convert
 import csv
+import requests
+from lxml import etree
+from io import StringIO
+
 
 def show(type):
        convert.convert()
+
+
 
        try:
               data = csv.reader(open('settings.csv', "r", encoding='ansi'))
@@ -40,9 +46,31 @@ def show(type):
               elif G._node[key]["fwk"]<minimum and type=="fwk": color.append('red')
               else: color.append('green')
 
+       click1 = []
        nx.draw(G,pos,with_labels=True,node_color=color)
-       plt.axis('off')
+
+       def onclick(event):
+              if event.dblclick:
+                     print(event.xdata, event.ydata)
+                     for key in G._node:
+                            if G._node[key]["pos_y"]+0.01>event.xdata and G._node[key]["pos_y"]-0.01<event.xdata and G._node[key]["pos_x"]+0.01>event.ydata and G._node[key]["pos_x"]-0.01<event.ydata:
+                                   click1.append(key)
+                     print(click1)
+                     if len(click1) > 1:
+                            if G.has_edge(click1[0],click1[1]):
+                                   G.remove_edge(click1.pop(),click1.pop())
+                            else:
+                                   G.add_edge(click1.pop(),click1.pop())
+                     plt.clf()
+                     nx.draw(G, pos, with_labels=True, node_color=color)
+                     plt.show()
+
+       fig = plt.figure(1)
+       fig.canvas.mpl_connect('button_press_event', onclick)
        plt.show()
+
+
+
 
 def lf():
        show("tlf")
