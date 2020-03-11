@@ -409,16 +409,16 @@ class Feuerwehr():
         return value
 
 def convert():
-    http_proxy = "<<<proxy>>>"
-    https_proxy = "<<<proxy>>>"
-
-    proxyDict = {
-        "http": http_proxy,
-        "https": https_proxy
-    }
+    #http_proxy = "<<<proxy>>>"
+    #https_proxy = "<<<proxy>>>"
+    #
+    #proxyDict = {
+    #    "http": http_proxy,
+    #    "https": https_proxy
+    #}
     session = requests.Session()
     parser = etree.HTMLParser()
-    r = session.get('https://www.leitstellenspiel.de/users/sign_in', proxies=proxyDict)
+    r = session.get('https://www.leitstellenspiel.de/users/sign_in')#, proxies=proxyDict)
     html = r.content.decode("utf-8")
     tree = etree.parse(StringIO(html), parser=parser)
     refs = tree.xpath('/html/head/meta[@name="csrf-token"]/@content')[0]
@@ -426,10 +426,10 @@ def convert():
 
     payload = {'user[email]': '<<<email>>>', 'user[password]': '<<<password>>>', 'user[remember_me]': '0',
                'utf8': '✓', 'authenticity_token': refs, 'commit': 'Einloggen'}
-    r = session.post('https://www.leitstellenspiel.de/users/sign_in', data=payload, proxies=proxyDict)
+    r = session.post('https://www.leitstellenspiel.de/users/sign_in', data=payload)#, proxies=proxyDict)
     #print(session.cookies.get_dict()['_session_id'])
 
-    r = session.get('https://www.leitstellenspiel.de/api/buildings', proxies=proxyDict)
+    r = session.get('https://www.leitstellenspiel.de/api/buildings')#, proxies=proxyDict)
     #print(r.content.decode("utf-8"))
     buildings = json.loads(r.content.decode("utf-8"))
 
