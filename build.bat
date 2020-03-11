@@ -1,1 +1,0 @@
-pyinstaller lss.spec --noconfirm
