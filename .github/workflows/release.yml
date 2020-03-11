@@ -71,10 +71,10 @@ jobs:
     - uses: actions/download-artifact@v1
       with:
         name: Feuerwachenplaner
-        path: ./zip
+        path: ./Feuerwachenplaner
     
     - name: Zip Folder
-      run: zip -r Feuerwachenplaner.zip ./zip/
+      run: zip -r Feuerwachenplaner.zip ./Feuerwachenplaner/
     
     - name: Create Release
       id: create_release
