@@ -1,3 +1,4 @@
+import time
 import matplotlib.pyplot as plt
 import networkx as nx
 import networkx.classes.graph
@@ -10,11 +11,18 @@ import requests
 from lxml import etree
 from io import StringIO
 
+def writeVerbindungen(liste):
+       data=""
+       for wehr in liste:
+              for neibor in wehr.neibors:
+                     data+=wehr.name+","+neibor.name+"\n"
+       f = open("verbindungen.csv", "w")
+       f.write(data)
+       f.close()
 
 def show(type):
-       convert.convert()
-
-
+       global G, wehren, color
+       wehren = convert.convert()
 
        try:
               data = csv.reader(open('settings.csv', "r", encoding='ansi'))
@@ -24,7 +32,6 @@ def show(type):
        for row in data:
               if row[0] == type:
                      minimum = float(row[1])
-
        G = nx.read_yaml("test.yml")
        pos = {}
        color = []
@@ -50,23 +57,84 @@ def show(type):
        nx.draw(G,pos,with_labels=True,node_color=color)
 
        def onclick(event):
+              global G, wehren, color
               if event.dblclick:
                      print(event.xdata, event.ydata)
+                     varianceX = event.inaxes.axes.viewLim.height / event.canvas.figure.bbox.height * 12.5
+                     varianceY = event.inaxes.axes.viewLim.width / event.canvas.figure.bbox.width * 12.5
                      for key in G._node:
-                            if G._node[key]["pos_y"]+0.01>event.xdata and G._node[key]["pos_y"]-0.01<event.xdata and G._node[key]["pos_x"]+0.01>event.ydata and G._node[key]["pos_x"]-0.01<event.ydata:
+                            if G._node[key]["pos_y"]+varianceY>event.xdata and G._node[key]["pos_y"]-varianceY<event.xdata and G._node[key]["pos_x"]+varianceX>event.ydata and G._node[key]["pos_x"]-varianceX<event.ydata:
                                    click1.append(key)
                      print(click1)
                      if len(click1) > 1:
                             if G.has_edge(click1[0],click1[1]):
+                                   convert.getWehr(wehren,click1[0]).deleteNeibor(convert.getWehr(wehren,click1[1]))
+                                   convert.getWehr(wehren,click1[1]).deleteNeibor(convert.getWehr(wehren,click1[0]))
                                    G.remove_edge(click1.pop(),click1.pop())
                             else:
+                                   convert.getWehr(wehren,click1[0]).addNeibor(convert.getWehr(wehren,click1[1]))
+                                   convert.getWehr(wehren,click1[1]).addNeibor(convert.getWehr(wehren,click1[0]))
                                    G.add_edge(click1.pop(),click1.pop())
-                     plt.clf()
+                            fig.set_facecolor((1.0, 0, 0))
+                            fig.canvas.draw()
+                            fig.canvas.flush_events()
+                            writeVerbindungen(wehren)
+                            wehren = convert.convert()
+                            G = nx.read_yaml("test.yml")
+                            color = []
+                            for key in G._node:
+                                   if G._node[key]["tlf"] < minimum and type == "tlf":color.append('red')
+                                   elif G._node[key]["elw1"] < minimum and type == "elw1":color.append('red')
+                                   elif G._node[key]["dlk"] < minimum and type == "dlk":color.append('red')
+                                   elif G._node[key]["rw"] < minimum and type == "rw":color.append('red')
+                                   elif G._node[key]["hlf"] < minimum and type == "hlf":color.append('red')
+                                   elif G._node[key]["gwOel"] < minimum and type == "gwOel":color.append('red')
+                                   elif G._node[key]["gwA"] < minimum and type == "gwA":color.append('red')
+                                   elif G._node[key]["gwS"] < minimum and type == "gwS":color.append('red')
+                                   elif G._node[key]["hoeh"] < minimum and type == "hoeh":color.append('red')
+                                   elif G._node[key]["mess"] < minimum and type == "mess":color.append('red')
+                                   elif G._node[key]["gwG"] < minimum and type == "gwG":color.append('red')
+                                   elif G._node[key]["elw2"] < minimum and type == "elw2":color.append('red')
+                                   elif G._node[key]["dekonP"] < minimum and type == "dekonP":color.append('red')
+                                   elif G._node[key]["fwk"] < minimum and type == "fwk":color.append('red')
+                                   else:color.append('green')
+                            fig.clf()
+                            nx.draw(G, pos, with_labels=True, node_color=color)
+                            plt.show()
+
+       def onkey(event):
+              global G, wehren, color, fig
+              if event.key=='r':
+                     fig.set_facecolor((1.0, 0, 0))
+                     fig.canvas.draw()
+                     fig.canvas.flush_events()
+                     wehren = convert.convert()
+                     G = nx.read_yaml("test.yml")
+                     color = []
+                     for key in G._node:
+                            if G._node[key]["tlf"] < minimum and type == "tlf":color.append('red')
+                            elif G._node[key]["elw1"] < minimum and type == "elw1":color.append('red')
+                            elif G._node[key]["dlk"] < minimum and type == "dlk":color.append('red')
+                            elif G._node[key]["rw"] < minimum and type == "rw":color.append('red')
+                            elif G._node[key]["hlf"] < minimum and type == "hlf":color.append('red')
+                            elif G._node[key]["gwOel"] < minimum and type == "gwOel":color.append('red')
+                            elif G._node[key]["gwA"] < minimum and type == "gwA":color.append('red')
+                            elif G._node[key]["gwS"] < minimum and type == "gwS":color.append('red')
+                            elif G._node[key]["hoeh"] < minimum and type == "hoeh":color.append('red')
+                            elif G._node[key]["mess"] < minimum and type == "mess":color.append('red')
+                            elif G._node[key]["gwG"] < minimum and type == "gwG":color.append('red')
+                            elif G._node[key]["elw2"] < minimum and type == "elw2":color.append('red')
+                            elif G._node[key]["dekonP"] < minimum and type == "dekonP":color.append('red')
+                            elif G._node[key]["fwk"] < minimum and type == "fwk":color.append('red')
+                            else:color.append('green')
+                     fig.clf()
                      nx.draw(G, pos, with_labels=True, node_color=color)
                      plt.show()
 
+       global fig
        fig = plt.figure(1)
        fig.canvas.mpl_connect('button_press_event', onclick)
+       fig.canvas.mpl_connect('key_press_event', onkey)
        plt.show()
 
 

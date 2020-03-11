@@ -71,6 +71,8 @@ class Feuerwehr():
     def addNeibor(self, wehr):
         self.neibors.append(wehr)
         self.neibors = list(dict.fromkeys(self.neibors))
+    def deleteNeibor(self, wehr):
+        self.neibors.remove(wehr)
     def getTLFs(self):
         try:
             data = csv.reader(open('settings.csv', "r", encoding='ansi'))
@@ -436,10 +438,10 @@ def convert():
     wehren = []
     for building in buildings:
         if building['building_type'] == 0:
-            wehr = Feuerwehr(building['caption'].replace(" ", ""),building['latitude'],building['longitude'],building['id'])
+            wehr = Feuerwehr(building['caption'],building['latitude'],building['longitude'],building['id'])
             wehren.append(wehr)
 
-    r = session.get('https://www.leitstellenspiel.de/api/vehicles', proxies=proxyDict)
+    r = session.get('https://www.leitstellenspiel.de/api/vehicles')#, proxies=proxyDict)
     # print(r.content.decode("utf-8"))
     vehicles = json.loads(r.content.decode("utf-8"))
 
@@ -459,34 +461,38 @@ def convert():
     #    wehr = Feuerwehr(row[0].strip(), row[1].strip(), row[2].strip(), row[3].strip(), row[4].strip(), row[5].strip(), row[6].strip(), row[7].strip(), row[8].strip(), row[9].strip(), row[10].strip(), row[11].strip(), row[12].strip(), row[13].strip(), row[14].strip(), row[15].strip(), row[16].strip())
     #    wehren.append(wehr)
 
-    #try:
-    #    data = csv.reader(open('verbindungen.csv', "r", encoding='ansi'))
-    #except:
-    #    data = csv.reader(open('../../verbindungen.csv', "r", encoding='ansi'))
-    #for row in data:
-    #    getWehr(wehren,row[0].strip()).addNeibor(getWehr(wehren,row[1].strip()))
-    #    getWehr(wehren,row[1].strip()).addNeibor(getWehr(wehren,row[0].strip()))
+    try:
+        data = csv.reader(open('verbindungen.csv', "r", encoding='ansi'))
+    except:
+        data = csv.reader(open('../../verbindungen.csv', "r", encoding='ansi'))
+    for row in data:
+        if len(row)>1:
+            getWehr(wehren,row[0].strip()).addNeibor(getWehr(wehren,row[1].strip()))
+            getWehr(wehren,row[1].strip()).addNeibor(getWehr(wehren,row[0].strip()))
 
     data = "!!python/object:networkx.classes.graph.Graph\n"
     data += "_adj:\n"
-    for wehr in [wehren[0]]:
+    for wehr in wehren:
         data += "  " + wehr.name + ":\n"
-        for wehr2 in [wehren[1]]:
-            data += "    " + wehr2.name + ": {}\n"
+        for neibor in wehr.neibors:
+            data += "    " + neibor.name + ": {}\n"
+        data += "    " + wehr.name + ": {}\n"
     data += "_node: &id001\n"
     for wehr in wehren:
         data += "  " + wehr.name + ": {pos_x: " + str(wehr.pos_x) + ", pos_y: " + str(wehr.pos_y) + ", tlf: " + str(wehr.getTLFs()) + ", elw1: " + str(wehr.getELW1s()) + ", dlk: " + str(wehr.getDLKs()) + ", rw: " + str(wehr.getRWs()) + ", hlf: " + str(wehr.getHLFs()) + ", gwOel: " + str(wehr.getGWOELs()) + ", gwA: " + str(wehr.getGWAs()) + ", gwS: " + str(wehr.getGWSs()) + ", hoeh: " + str(wehr.getHOEHs()) + ", mess: " + str(wehr.getMESSs()) + ", gwG: " + str(wehr.getGWGs()) + ", elw2: " + str(wehr.getELW2s()) + ", dekonP: " + str(wehr.getDEKONPs()) + ", fwk: " + str(wehr.getFWKs()) + "}\n"
-    #data += "adjlist_inner_dict_factory: &id002 !!python/name:builtins.dict ''\n"
-    #data += "adjlist_outer_dict_factory: *id002\n"
-    #data += "edge_attr_dict_factory: *id002\n"
-    #data += "graph:\n"
-    #data += "  name: FFs\n"
-    #data += "graph_attr_dict_factory: *id002\n"
-    #data += "node_attr_dict_factory: *id002\n"
-    #data += "node_dict_factory: *id002\n"
+    data += "adjlist_inner_dict_factory: &id002 !!python/name:builtins.dict ''\n"
+    data += "adjlist_outer_dict_factory: *id002\n"
+    data += "edge_attr_dict_factory: *id002\n"
+    data += "graph:\n"
+    data += "  name: FFs\n"
+    data += "graph_attr_dict_factory: *id002\n"
+    data += "node_attr_dict_factory: *id002\n"
+    data += "node_dict_factory: *id002\n"
     data += "nodes: !!python/object:networkx.classes.reportviews.NodeView\n"
     data += "  _nodes: *id001\n"
 
     f = open("test.yml", "w")
     f.write(data)
     f.close()
+
+    return wehren
