@@ -61,19 +61,20 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-        
-    - uses: actions/download-artifact@v1
-      with:
-        name: Feuerwachenplaner
-    
-    - name: Zip Folder
-      run: zip -r Feuerwachenplaner.zip .
     
     - uses: actions/checkout@v2
 
     - name: get commit message
       run: |
          echo ::set-env name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})
+        
+    - uses: actions/download-artifact@v1
+      with:
+        name: Feuerwachenplaner
+        path: ./zip
+    
+    - name: Zip Folder
+      run: zip -r Feuerwachenplaner.zip . -i ./zip/*
     
     - name: Create Release
       id: create_release
