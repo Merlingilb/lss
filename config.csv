@@ -1,0 +1,7 @@
+username,<<<email|username>>>
+password,<<<password>>>
+proxy,no
+http_proxy,<<<http_proxy|delete line>>>
+https_proxy,<<<https_proxy|delete line>>>
+exclude,4063504
+exclude,4048142
