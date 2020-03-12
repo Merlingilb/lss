@@ -23,6 +23,7 @@ def writeVerbindungen(liste):
 def show(type):
        global G, wehren, color
        wehren = convert.convert()
+       plt.rcParams['keymap.home'].remove('r')
 
        try:
               data = csv.reader(open('settings.csv', "r", encoding='ansi'))
@@ -62,6 +63,10 @@ def show(type):
                      print(event.xdata, event.ydata)
                      varianceX = event.inaxes.axes.viewLim.height / event.canvas.figure.bbox.height * 12.5
                      varianceY = event.inaxes.axes.viewLim.width / event.canvas.figure.bbox.width * 12.5
+                     xmin = event.inaxes.axes.viewLim.xmin
+                     xmax = event.inaxes.axes.viewLim.xmax
+                     ymin = event.inaxes.axes.viewLim.ymin
+                     ymax = event.inaxes.axes.viewLim.ymax
                      length = len(click1)
                      for key in G._node:
                             if G._node[key]["pos_y"]+varianceY>event.xdata and G._node[key]["pos_y"]-varianceY<event.xdata and G._node[key]["pos_x"]+varianceX>event.ydata and G._node[key]["pos_x"]-varianceX<event.ydata:
@@ -107,11 +112,17 @@ def show(type):
                             else:color.append('green')
                      fig.clf()
                      nx.draw(G, pos, with_labels=True, node_color=color)
+                     fig.canvas.toolbar.push_current()
+                     plt.axis([xmin,xmax,ymin,ymax])
                      plt.show()
 
        def onkey(event):
               global G, wehren, color, fig
               if event.key=='r':
+                     xmin = event.inaxes.axes.viewLim.xmin
+                     xmax = event.inaxes.axes.viewLim.xmax
+                     ymin = event.inaxes.axes.viewLim.ymin
+                     ymax = event.inaxes.axes.viewLim.ymax
                      fig.set_facecolor((1.0, 0, 0))
                      fig.canvas.draw()
                      fig.canvas.flush_events()
@@ -136,6 +147,8 @@ def show(type):
                             else:color.append('green')
                      fig.clf()
                      nx.draw(G, pos, with_labels=True, node_color=color)
+                     fig.canvas.toolbar.push_current()
+                     plt.axis([xmin,xmax,ymin,ymax])
                      plt.show()
 
        global fig
