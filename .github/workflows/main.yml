@@ -50,8 +50,7 @@ jobs:
         mkdir .\archive\dist
         mkdir .\archive\dist\lss
         xcopy .\dist\lss\* .\archive\dist\lss\ /s /e
-        xcopy .\wehren.csv .\archive\
-        xcopy .\verbindungen.csv .\archive\
+        xcopy .\config.csv .\archive\
         xcopy .\settings.csv .\archive\
         xcopy .\start.bat .\archive\
     
