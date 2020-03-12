@@ -411,60 +411,142 @@ class Feuerwehr():
         return value
 
 def convert():
-    #http_proxy = "<<<proxy>>>"
-    #https_proxy = "<<<proxy>>>"
-    #
-    #proxyDict = {
-    #    "http": http_proxy,
-    #    "https": https_proxy
-    #}
+    username = ""
+    password = ""
+    http_proxy = ""
+    https_proxy = ""
+    proxy = False
+    excludeWehren = []
+    try:
+        data = csv.reader(open('config.csv', "r", encoding='ansi'))
+    except:
+        data = csv.reader(open('../../config.csv', "r", encoding='ansi'))
+    for row in data:
+        if row[0].strip()=="username":
+            username = row[1].strip()
+            if username=="<<<email|username>>>":
+                raise Exception("config.csv has still default values... Change them before starting the program.")
+        if row[0].strip()=="password":
+            password = row[1].strip()
+            if password=="<<<password>>>":
+                raise Exception("config.csv has still default values... Change them before starting the program.")
+        if row[0].strip()=="proxy" and row[1].strip()=="yes":
+            proxy = True
+        if row[0].strip()=="proxy" and row[1].strip()=="<<<yes|no>>>":
+            raise Exception("config.csv has still default values... Change them before starting the program.")
+        if row[0].strip()=="http_proxy":
+            http_proxy = row[1].strip()
+            if http_proxy=="<<<http_proxy|delete line>>>":
+                raise Exception("config.csv has still default values... Change them before starting the program.")
+        if row[0].strip()=="https_proxy":
+            https_proxy = row[1].strip()
+            if https_proxy=="<<<https_proxy|delete line>>>":
+                raise Exception("config.csv has still default values... Change them before starting the program.")
+        if row[0].strip()=="exclude":
+            excludeWehren.append(row[1].strip())
+            if row[1].strip()=="<<<building id>>>":
+                raise Exception("config.csv has still default values... Change them before starting the program.")
+
+    if proxy:
+        proxyDict = {
+            "http": http_proxy,
+            "https": https_proxy
+        }
+    else:
+        proxyDict = {}
+
     session = requests.Session()
     parser = etree.HTMLParser()
-    r = session.get('https://www.leitstellenspiel.de/users/sign_in')#, proxies=proxyDict)
+    r = session.get('https://www.leitstellenspiel.de/users/sign_in', proxies=proxyDict)
     html = r.content.decode("utf-8")
     tree = etree.parse(StringIO(html), parser=parser)
     refs = tree.xpath('/html/head/meta[@name="csrf-token"]/@content')[0]
     #print(refs)
 
-    payload = {'user[email]': '<<<email>>>', 'user[password]': '<<<password>>>', 'user[remember_me]': '0',
+    payload = {'user[email]': username, 'user[password]': password, 'user[remember_me]': '0',
                'utf8': '✓', 'authenticity_token': refs, 'commit': 'Einloggen'}
-    r = session.post('https://www.leitstellenspiel.de/users/sign_in', data=payload)#, proxies=proxyDict)
+    r = session.post('https://www.leitstellenspiel.de/users/sign_in', data=payload, proxies=proxyDict)
     #print(session.cookies.get_dict()['_session_id'])
 
-    r = session.get('https://www.leitstellenspiel.de/api/buildings')#, proxies=proxyDict)
+    r = session.get('https://www.leitstellenspiel.de/api/buildings', proxies=proxyDict)
     #print(r.content.decode("utf-8"))
     buildings = json.loads(r.content.decode("utf-8"))
 
     wehren = []
     for building in buildings:
-        if building['building_type'] == 0:
+        if building['building_type'] == 0 and (str(building['id']) not in excludeWehren):
             wehr = Feuerwehr(building['caption'],building['latitude'],building['longitude'],building['id'])
             wehren.append(wehr)
 
-    r = session.get('https://www.leitstellenspiel.de/api/vehicles')#, proxies=proxyDict)
+    r = session.get('https://www.leitstellenspiel.de/api/vehicles', proxies=proxyDict)
     # print(r.content.decode("utf-8"))
     vehicles = json.loads(r.content.decode("utf-8"))
 
     for vehicle in vehicles:
-        if vehicle['vehicle_type'] == 7:
+        if vehicle['vehicle_type'] == 0 or vehicle['vehicle_type'] == 1 or vehicle['vehicle_type'] == 6 or vehicle['vehicle_type'] == 7 or vehicle['vehicle_type'] == 8 or vehicle['vehicle_type'] == 9 or vehicle['vehicle_type'] == 17 or vehicle['vehicle_type'] == 18 or vehicle['vehicle_type'] == 19 or vehicle['vehicle_type'] == 7 or vehicle['vehicle_type'] == 20 or vehicle['vehicle_type'] == 21 or vehicle['vehicle_type'] == 22 or vehicle['vehicle_type'] == 23 or vehicle['vehicle_type'] == 24 or vehicle['vehicle_type'] == 25 or vehicle['vehicle_type'] == 26 or vehicle['vehicle_type'] == 37:
             for wehr in wehren:
                 if wehr.id==vehicle['building_id']:
                     wehr.addFahrzeug("tlf")
-
-    #wehren = []
-    #try:
-    #    data = csv.reader(open('wehren.csv', "r", encoding='ansi'))
-    #except:
-    #    data = csv.reader(open('../../wehren.csv', "r", encoding='ansi'))
-    #next(data)
-    #for row in data:
-    #    wehr = Feuerwehr(row[0].strip(), row[1].strip(), row[2].strip(), row[3].strip(), row[4].strip(), row[5].strip(), row[6].strip(), row[7].strip(), row[8].strip(), row[9].strip(), row[10].strip(), row[11].strip(), row[12].strip(), row[13].strip(), row[14].strip(), row[15].strip(), row[16].strip())
-    #    wehren.append(wehr)
+        if vehicle['vehicle_type'] == 2:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("dlk")
+        if vehicle['vehicle_type'] == 3:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("elw1")
+        if vehicle['vehicle_type'] == 4 or vehicle['vehicle_type'] == 47:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("rw")
+        if vehicle['vehicle_type'] == 5 or vehicle['vehicle_type'] == 48:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("gwA")
+        if vehicle['vehicle_type'] == 10 or vehicle['vehicle_type'] == 49:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("gwOel")
+        if vehicle['vehicle_type'] == 11 or vehicle['vehicle_type'] == 13 or vehicle['vehicle_type'] == 14 or vehicle['vehicle_type'] == 15 or vehicle['vehicle_type'] == 16:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("gwS")
+        if vehicle['vehicle_type'] == 12:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("mess")
+        if vehicle['vehicle_type'] == 27:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("gwG")
+        if vehicle['vehicle_type'] == 30:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("hlf")
+        if vehicle['vehicle_type'] == 33:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("hoeh")
+        if vehicle['vehicle_type'] == 34:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("elw2")
+        if vehicle['vehicle_type'] == 53 or vehicle['vehicle_type'] == 54:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("dekonP")
+        if vehicle['vehicle_type'] == 57:
+            for wehr in wehren:
+                if wehr.id==vehicle['building_id']:
+                    wehr.addFahrzeug("fwk")
 
     try:
         data = csv.reader(open('verbindungen.csv', "r", encoding='ansi'))
     except:
-        data = csv.reader(open('../../verbindungen.csv', "r", encoding='ansi'))
+        try:
+            data = csv.reader(open('../../verbindungen.csv', "r", encoding='ansi'))
+        except:
+            data = []
     for row in data:
         if len(row)>1:
             getWehr(wehren,row[0].strip()).addNeibor(getWehr(wehren,row[1].strip()))

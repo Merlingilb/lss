@@ -62,9 +62,15 @@ def show(type):
                      print(event.xdata, event.ydata)
                      varianceX = event.inaxes.axes.viewLim.height / event.canvas.figure.bbox.height * 12.5
                      varianceY = event.inaxes.axes.viewLim.width / event.canvas.figure.bbox.width * 12.5
+                     length = len(click1)
                      for key in G._node:
                             if G._node[key]["pos_y"]+varianceY>event.xdata and G._node[key]["pos_y"]-varianceY<event.xdata and G._node[key]["pos_x"]+varianceX>event.ydata and G._node[key]["pos_x"]-varianceX<event.ydata:
-                                   click1.append(key)
+                                   if key in click1:
+                                          click1.remove(key)
+                                   else:
+                                          click1.append(key)
+                     if length + 1 < len(click1):
+                            click1.clear()
                      print(click1)
                      if len(click1) > 1:
                             if G.has_edge(click1[0],click1[1]):
@@ -81,26 +87,27 @@ def show(type):
                             writeVerbindungen(wehren)
                             wehren = convert.convert()
                             G = nx.read_yaml("test.yml")
-                            color = []
-                            for key in G._node:
-                                   if G._node[key]["tlf"] < minimum and type == "tlf":color.append('red')
-                                   elif G._node[key]["elw1"] < minimum and type == "elw1":color.append('red')
-                                   elif G._node[key]["dlk"] < minimum and type == "dlk":color.append('red')
-                                   elif G._node[key]["rw"] < minimum and type == "rw":color.append('red')
-                                   elif G._node[key]["hlf"] < minimum and type == "hlf":color.append('red')
-                                   elif G._node[key]["gwOel"] < minimum and type == "gwOel":color.append('red')
-                                   elif G._node[key]["gwA"] < minimum and type == "gwA":color.append('red')
-                                   elif G._node[key]["gwS"] < minimum and type == "gwS":color.append('red')
-                                   elif G._node[key]["hoeh"] < minimum and type == "hoeh":color.append('red')
-                                   elif G._node[key]["mess"] < minimum and type == "mess":color.append('red')
-                                   elif G._node[key]["gwG"] < minimum and type == "gwG":color.append('red')
-                                   elif G._node[key]["elw2"] < minimum and type == "elw2":color.append('red')
-                                   elif G._node[key]["dekonP"] < minimum and type == "dekonP":color.append('red')
-                                   elif G._node[key]["fwk"] < minimum and type == "fwk":color.append('red')
-                                   else:color.append('green')
-                            fig.clf()
-                            nx.draw(G, pos, with_labels=True, node_color=color)
-                            plt.show()
+                     color = []
+                     for key in G._node:
+                            if key in click1:color.append('orange')
+                            elif G._node[key]["tlf"] < minimum and type == "tlf":color.append('red')
+                            elif G._node[key]["elw1"] < minimum and type == "elw1":color.append('red')
+                            elif G._node[key]["dlk"] < minimum and type == "dlk":color.append('red')
+                            elif G._node[key]["rw"] < minimum and type == "rw":color.append('red')
+                            elif G._node[key]["hlf"] < minimum and type == "hlf":color.append('red')
+                            elif G._node[key]["gwOel"] < minimum and type == "gwOel":color.append('red')
+                            elif G._node[key]["gwA"] < minimum and type == "gwA":color.append('red')
+                            elif G._node[key]["gwS"] < minimum and type == "gwS":color.append('red')
+                            elif G._node[key]["hoeh"] < minimum and type == "hoeh":color.append('red')
+                            elif G._node[key]["mess"] < minimum and type == "mess":color.append('red')
+                            elif G._node[key]["gwG"] < minimum and type == "gwG":color.append('red')
+                            elif G._node[key]["elw2"] < minimum and type == "elw2":color.append('red')
+                            elif G._node[key]["dekonP"] < minimum and type == "dekonP":color.append('red')
+                            elif G._node[key]["fwk"] < minimum and type == "fwk":color.append('red')
+                            else:color.append('green')
+                     fig.clf()
+                     nx.draw(G, pos, with_labels=True, node_color=color)
+                     plt.show()
 
        def onkey(event):
               global G, wehren, color, fig
