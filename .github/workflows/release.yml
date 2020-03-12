@@ -35,6 +35,8 @@ jobs:
         pip install pypiwin32
         pip install pefile
         pip install pyinstaller
+        pip install requests
+        pip install lxml
     
     # Runs a single command using the runners shell
     - name: Run build.bat
