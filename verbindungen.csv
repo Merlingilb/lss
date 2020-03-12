@@ -1,177 +1,354 @@
-Höhenkirchen,Siegertsbrunn
-Höhenkirchen,Hohenbrunn
-Höhenkirchen,Merck-Schuchardt
-Siegertsbrunn,Merck-Schuchardt
-Hohenbrunn,Merck-Schuchardt
-Brunnthal,Höhenkirchen
-Hofolding,Brunnthal
-Hofolding,Höhenkirchen
-Hofolding,Siegertsbrunn
-Aying,Hofolding
-Großhelfendorf,Aying
-Großhelfendorf,Hofolding
-Sauerlach,Hofolding
-Sauerlach,Brunnthal
-Arget,Sauerlach
-Altkirchen,Sauerlach
-Altkirchen,Arget
-Oberbiberg,Altkirchen
-Oberhaching,Oberbiberg
-Oberhaching,Brunnthal
-Oberhaching,Sauerlach
-Taufkirchen,Oberhaching
-Unterhaching,Taufkirchen
-Unterbiberg,Unterhaching
-Uni-BW,Unterbiberg
-Infineon,Unterhaching
-Neubiberg,Uni-BW
-Ottobrunn,Unterhaching
-Ottobrunn,Neubiberg
-Ottobrunn,Hohenbrunn
-IABG,Ottobrunn
-IABG,Hohenbrunn
-IABG,Taufkirchen
-Harthausen,Siegertsbrunn
-Grasbrunn,Harthausen
-Putzbrunn,Grasbrunn
-Putzbrunn,Hohenbrunn
-Putzbrunn,Neubiberg
-Haar,Putzbrunn
-Haar,Grasbrunn
-Isar-Amper,Haar
-Waldtrudering,Haar
-Trudering,Waldtrudering
-Michaeliburg,Trudering
-München 9,Michaeliburg
-München 9,Neubiberg
-Waldperlach,Neubiberg
-Waldperlach,München 9
-Waldperlach,Putzbrunn
-Perlach,Unterbiberg
-Perlach,München 9
-Perlach,Michaeliburg
-Huber Group,Heimstetten
-Kirchheim,Huber Group
-Kirchheim,Heimstetten
-Aschheim,Kirchheim
-Feldkirchen,Aschheim
-Feldkirchen,Huber Group
-Feldkirchen,Haar
-Dornach,Aschheim
-München 10,Dornach
-München 10,Feldkirchen
-München 10,Trudering
-Riem,München 10
-München 5,Michaeliburg
-München 5,Perlach
-Englschalking,München 5
-Englschalking,Riem
-Englschalking,Trudering
-Oberföhring,Englschalking
-München 8,Oberföhring
-München 8,Englschalking
-München 8,Aschheim
-Unterföhring,München 8
-Unterföhring,Oberföhring
-Freimann,Oberföhring
-Freimann,Unterföhring
-Dingharting,Oberbiberg
-Straßlach,Dingharting
-Ebenhausen,Dingharting
-Hohenschäftlarn,Ebenhausen
-Hohenschäftlarn,Dingharting
-Baierbrunn,Hohenschäftlarn
-United Initiators,Baierbrunn
-Linde AG,United Initiators
-Grünwald,Oberhaching
-Grünwald,Linde AG
-Grünwald,United Initiators
-Grünwald,Straßlach
-Pullach,Linde AG
-Bavaria Film,Grünwald
-Solln,Pullach
-Neufahrn,Hohenschäftlarn
-Neufahrn,Ebenhausen
-Bavaria Film,München 5
-Bavaria Film,München 2
-Forstenried,Solln
-München 2,Solln
-München 2,Forstenried
-Sendling,München 2
-Großhadern,München 2
-Großhadern,Sendling
-Neuried,Großhadern
-Neuried,Forstenried
-Gräfelfing,Großhadern
-Planegg,Gräfelfing
-Planegg,Neuried
-München 2,München 5
-Aubing,Gräfelfing
-München 6,Aubing
-München 6,Gräfelfing
-München 6,Großhadern
-Obermenzing,München 6
-Moosach,Obermenzing
-München 4,Moosach
-München 3,Sendling
-München 4,München 3
-Stadtmitte,München 4
-München 4,München 1
-München 1,München 3
-München 1,München 5
-BMW,Stadtmitte
-BMW,Moosach
-München 7,BMW
-München 7,Freimann
-Harthof,Freimann
-Harthof,München 7
-Feldmoching,Harthof
-Feldmoching,München 7
-Feldmoching,Moosach
-Ludwigsfeld,Moosach
-Langwied,Obermenzing
-Langwied,Aubing
-Allach,Obermenzing
-Krauss Maffei,Ludwigsfeld
-Krauss Maffei,Allach
-MTU-MAN,Allach
-MTU-MAN,Ludwigsfeld
-MTU-MAN,Feldmoching
-Ismaning,Aschheim
-Ismaning,Unterföhring
-Garching,Ismaning
-Garching,Freimann
-Hochbrück,Garching
-Helmholtz,Freimann
-Helmholtz,Harthof
-Helmholtz,Hochbrück
-Oberschleißheim,Helmholtz
-Oberschleißheim,Hochbrück
-Oberschleißheim,Feldmoching
-Badersfeld,Oberschleißheim
-Riedmoos,Badersfeld
-Riedmoos,Oberschleißheim
-Unterschleißheim,Riedmoos
-Unterschleißheim,Oberschleißheim
-Unterschleißheim,Hochbrück
-Eching,Unterschleißheim
-TUM,Garching
-TUM,Eching
-Dietersheim,Eching
-Dietersheim,TUM
-Günzenhausen,Eching
-Günzenhausen,Unterschleißheim
-Fürholzen,Günzenhausen
-Neufahrn b. Freising,Eching
-Mintraching,Neufahrn b. Freising
-Mintraching,Dietersheim
-Goldach,Mintraching
-Hallbergmoos,Goldach
-Hetzenhausen,Fürholzen
-Massenhausen,Fürholzen
-Massenhausen,Hetzenhausen
-Massenhausen,Neufahrn b. Freising
-Flughafen,Mintraching
-Flughafen,Hallbergmoos
-Infineon,Unterbiberg
-Infineon,München 5
+WF Linde,WF United-Initiators
+WF Linde,FF Grünwald
+WF Linde,FF Pullach
+FF Günzenhausen,FF Eching
+FF Günzenhausen,FF Unterschleißheim
+FF Günzenhausen,FF Fürholzen
+WF Bavaria-Film,FF Grünwald
+WF Bavaria-Film,BF München 5
+WF Bavaria-Film,BF München 2
+FF Gräfelfing,FF Planegg
+FF Gräfelfing,FF München-Großhadern
+FF Gräfelfing,BF München 6
+FF Gräfelfing,FF München-Aubing
+FF Oberschleißheim,FF Hochbrück
+FF Oberschleißheim,FF München-Feldmoching
+FF Oberschleißheim,FF Badersfeld
+FF Oberschleißheim,FF Riedmoos
+FF Oberschleißheim,FF Unterschleißheim
+FF Oberschleißheim,WF Helmholtz
+FF Neufahrn l. d. Isar,FF Hohenschäftlarn
+FF Neufahrn l. d. Isar,FF Ebenhausen
+FF Ebenhausen,FF Neufahrn l. d. Isar
+FF Ebenhausen,FF Dingharting
+FF Ebenhausen,FF Hohenschäftlarn
+FF Straßlach,FF Dingharting
+FF Straßlach,FF Grünwald
+FF Neufahrn bei Freising,FF Eching
+FF Neufahrn bei Freising,FF Mintraching
+FF Neufahrn bei Freising,FF Massenhausen
+FF München-Aubing,FF Gräfelfing
+FF München-Aubing,BF München 6
+FF München-Aubing,FF München-Langwied
+BF München 6,FF Gräfelfing
+BF München 6,FF München-Aubing
+BF München 6,FF München-Großhadern
+BF München 6,FF München-Obermenzing
+FF Dingharting,FF Ebenhausen
+FF Dingharting,FF Straßlach
+FF Dingharting,FF Oberbiberg
+FF Dingharting,FF Hohenschäftlarn
+FF München-Ludwigsfeld,WF MTU-MAN
+FF München-Ludwigsfeld,FF München-Moosach
+FF München-Ludwigsfeld,WF Krauss Maffei
+WF Flughafen München,FF Hallbergmoos
+WF Flughafen München,FF Mintraching
+FF Riedmoos,FF Oberschleißheim
+FF Riedmoos,FF Badersfeld
+FF Riedmoos,FF Unterschleißheim
+FF Mintraching,FF Neufahrn bei Freising
+FF Mintraching,WF Flughafen München
+FF Mintraching,FF Dietersheim
+FF Mintraching,FF Goldach
+FF Planegg,FF Gräfelfing
+FF Planegg,FF Neuried
+FF Garching,FF Ismaning
+FF Garching,WF TUM
+FF Garching,FF München-Freimann
+FF Garching,FF Hochbrück
+FF Dietersheim,FF Mintraching
+FF Dietersheim,WF TUM
+FF Dietersheim,FF Eching
+FF Hochbrück,FF Oberschleißheim
+FF Hochbrück,FF Garching
+FF Hochbrück,WF Helmholtz
+FF Hochbrück,FF Unterschleißheim
+FF Neuried,FF Planegg
+FF Neuried,FF München-Großhadern
+FF Neuried,FF München-Forstenried
+FF Massenhausen,FF Neufahrn bei Freising
+FF Massenhausen,FF Fürholzen
+FF Massenhausen,FF Hetzenhausen
+FF München-Oberföhring,FF München-Englschalking
+FF München-Oberföhring,FF München-Freimann
+FF München-Oberföhring,BF München 8
+FF München-Oberföhring,FF Unterföhring
+FF Brunnthal,FF Höhenkirchen
+FF Brunnthal,FF Hofolding
+FF Brunnthal,FF Sauerlach
+FF Brunnthal,FF Oberhaching
+FF Goldach,FF Mintraching
+FF Goldach,FF Hallbergmoos
+FF Hetzenhausen,FF Massenhausen
+FF Hetzenhausen,FF Fürholzen
+BtF Infineon,FF Unterbiberg
+BtF Infineon,FF Unterhaching
+BtF Infineon,BF München 5
+WF United-Initiators,WF Linde
+WF United-Initiators,FF Baierbrunn
+WF United-Initiators,FF Grünwald
+FF Grasbrunn,FF Harthausen
+FF Grasbrunn,FF Putzbrunn
+FF Grasbrunn,FF Haar
+WF TUM,FF Garching
+WF TUM,FF Dietersheim
+WF TUM,FF Eching
+FF Fürholzen,FF Günzenhausen
+FF Fürholzen,FF Massenhausen
+FF Fürholzen,FF Hetzenhausen
+FF München-Langwied,FF München-Aubing
+FF München-Langwied,FF München-Obermenzing
+FF Hallbergmoos,WF Flughafen München
+FF Hallbergmoos,FF Goldach
+FF München-Solln,FF Pullach
+FF München-Solln,BF München 2
+FF München-Solln,FF München-Forstenried
+WF BMW,BF München 7
+WF BMW,FF München-Stadtmitte
+WF BMW,FF München-Moosach
+FF Grünwald,WF Linde
+FF Grünwald,WF Bavaria-Film
+FF Grünwald,FF Straßlach
+FF Grünwald,WF United-Initiators
+FF Grünwald,FF Oberhaching
+FF Unterschleißheim,FF Günzenhausen
+FF Unterschleißheim,FF Oberschleißheim
+FF Unterschleißheim,FF Riedmoos
+FF Unterschleißheim,FF Hochbrück
+FF Unterschleißheim,FF Eching
+FF Baierbrunn,WF United-Initiators
+FF Baierbrunn,FF Hohenschäftlarn
+FF München-Englschalking,FF München-Oberföhring
+FF München-Englschalking,BF München 5
+FF München-Englschalking,FF München-Trudering
+FF München-Englschalking,BF München 8
+FF München-Englschalking,FF München-Riem
+FF Siegertsbrunn,FF Höhenkirchen
+FF Siegertsbrunn,BtF Merck-Schuchardt
+FF Siegertsbrunn,FF Harthausen
+FF Siegertsbrunn,FF Hofolding
+FF München-Feldmoching,FF Oberschleißheim
+FF München-Feldmoching,FF München-Harthof
+FF München-Feldmoching,BF München 7
+FF München-Feldmoching,FF München-Moosach
+FF München-Feldmoching,WF MTU-MAN
+FF München-Obermenzing,BF München 6
+FF München-Obermenzing,FF München-Langwied
+FF München-Obermenzing,FF München-Moosach
+FF München-Obermenzing,FF München-Allach
+WF Helmholtz,FF Oberschleißheim
+WF Helmholtz,FF Hochbrück
+WF Helmholtz,FF München-Freimann
+WF Helmholtz,FF München-Harthof
+FF München-Großhadern,FF Gräfelfing
+FF München-Großhadern,BF München 6
+FF München-Großhadern,FF Neuried
+FF München-Großhadern,FF München-Sendling
+FF München-Großhadern,BF München 2
+FF Hohenschäftlarn,FF Neufahrn l. d. Isar
+FF Hohenschäftlarn,FF Ebenhausen
+FF Hohenschäftlarn,FF Dingharting
+FF Hohenschäftlarn,FF Baierbrunn
+FF Unterhaching,BtF Infineon
+FF Unterhaching,FF Taufkirchen
+FF Unterhaching,FF Ottobrunn
+FF Unterhaching,FF Unterbiberg
+FF München-Waldperlach,BF München 9
+FF München-Waldperlach,FF Neubiberg
+FF München-Waldperlach,FF Putzbrunn
+FF München-Allach,FF München-Obermenzing
+FF München-Allach,WF MTU-MAN
+FF München-Allach,WF Krauss Maffei
+FF München-Waldtrudering,FF München-Trudering
+FF München-Waldtrudering,FF Haar
+FF Hohenbrunn,BtF Merck-Schuchardt
+FF Hohenbrunn,FF Höhenkirchen
+FF Hohenbrunn,WF IABG
+FF Hohenbrunn,FF Ottobrunn
+FF Hohenbrunn,FF Putzbrunn
+FF Kirchheim,FF Heimstetten
+FF Kirchheim,BtF Hubergroup
+FF Kirchheim,FF Aschheim
+FF Harthausen,FF Grasbrunn
+FF Harthausen,FF Siegertsbrunn
+WF Isar-Amper-Klinikum,FF Haar
+BF München 10,FF München-Trudering
+BF München 10,FF München-Riem
+BF München 10,FF Dornach
+BF München 10,FF Feldkirchen
+FF Aying,FF Großhelfendorf
+FF Aying,FF Hofolding
+FF München-Riem,FF München-Englschalking
+FF München-Riem,BF München 10
+FF Großhelfendorf,FF Aying
+FF Großhelfendorf,FF Hofolding
+FF Putzbrunn,FF Grasbrunn
+FF Putzbrunn,FF München-Waldperlach
+FF Putzbrunn,FF Hohenbrunn
+FF Putzbrunn,FF Haar
+FF Putzbrunn,FF Neubiberg
+BF München 2,WF Bavaria-Film
+BF München 2,FF München-Solln
+BF München 2,FF München-Großhadern
+BF München 2,FF München-Sendling
+BF München 2,FF München-Forstenried
+BF München 2,BF München 5
+FF Ottobrunn,FF Unterhaching
+FF Ottobrunn,FF Hohenbrunn
+FF Ottobrunn,WF IABG
+FF Ottobrunn,FF Neubiberg
+BF München 9,FF München-Waldperlach
+BF München 9,FF München-Perlach
+BF München 9,FF Neubiberg
+BF München 9,FF München-Michaeliburg
+FF Dornach,BF München 10
+FF Dornach,FF Aschheim
+FF Haar,FF Grasbrunn
+FF Haar,FF München-Waldtrudering
+FF Haar,WF Isar-Amper-Klinikum
+FF Haar,FF Putzbrunn
+FF Haar,FF Feldkirchen
+FF Altkirchen,FF Sauerlach
+FF Altkirchen,FF Arget
+FF Altkirchen,FF Oberbiberg
+FF München-Michaeliburg,BF München 9
+FF München-Michaeliburg,BF München 5
+FF München-Michaeliburg,FF München-Perlach
+FF München-Michaeliburg,FF München-Trudering
+FF Oberbiberg,FF Dingharting
+FF Oberbiberg,FF Altkirchen
+FF Oberbiberg,FF Oberhaching
+FF Arget,FF Altkirchen
+FF Arget,FF Sauerlach
+BF München 8,FF München-Oberföhring
+BF München 8,FF München-Englschalking
+BF München 8,FF Unterföhring
+BF München 8,FF Aschheim
+FF Höhenkirchen,FF Brunnthal
+FF Höhenkirchen,FF Siegertsbrunn
+FF Höhenkirchen,FF Hohenbrunn
+FF Höhenkirchen,BtF Merck-Schuchardt
+FF Höhenkirchen,FF Hofolding
+WF Uni-BW Neubiberg,FF Neubiberg
+WF Uni-BW Neubiberg,FF Unterbiberg
+FF Heimstetten,FF Kirchheim
+FF Heimstetten,BtF Hubergroup
+FF Feldkirchen,BF München 10
+FF Feldkirchen,FF Haar
+FF Feldkirchen,BtF Hubergroup
+FF Feldkirchen,FF Aschheim
+FF Unterbiberg,BtF Infineon
+FF Unterbiberg,FF Unterhaching
+FF Unterbiberg,WF Uni-BW Neubiberg
+FF Unterbiberg,FF München-Perlach
+FF Neubiberg,FF München-Waldperlach
+FF Neubiberg,FF Ottobrunn
+FF Neubiberg,BF München 9
+FF Neubiberg,WF Uni-BW Neubiberg
+FF Neubiberg,FF Putzbrunn
+WF IABG,FF Hohenbrunn
+WF IABG,FF Ottobrunn
+WF IABG,FF Taufkirchen
+BF München 5,WF Bavaria-Film
+BF München 5,BtF Infineon
+BF München 5,FF München-Englschalking
+BF München 5,BF München 2
+BF München 5,FF München-Michaeliburg
+BF München 5,FF München-Perlach
+BF München 5,BF München 1
+FF Aschheim,FF Kirchheim
+FF Aschheim,FF Dornach
+FF Aschheim,BF München 8
+FF Aschheim,FF Feldkirchen
+FF Aschheim,FF Ismaning
+FF Ismaning,FF Garching
+FF Ismaning,FF Aschheim
+FF Ismaning,FF Unterföhring
+FF München-Stadtmitte,WF BMW
+FF München-Stadtmitte,BF München 4
+BtF Hubergroup,FF Kirchheim
+BtF Hubergroup,FF Heimstetten
+BtF Hubergroup,FF Feldkirchen
+FF München-Trudering,FF München-Englschalking
+FF München-Trudering,FF München-Waldtrudering
+FF München-Trudering,BF München 10
+FF München-Trudering,FF München-Michaeliburg
+FF Sauerlach,FF Brunnthal
+FF Sauerlach,FF Altkirchen
+FF Sauerlach,FF Arget
+FF Sauerlach,FF Hofolding
+FF Sauerlach,FF Oberhaching
+WF MTU-MAN,FF München-Ludwigsfeld
+WF MTU-MAN,FF München-Feldmoching
+WF MTU-MAN,FF München-Allach
+FF Unterföhring,FF München-Oberföhring
+FF Unterföhring,BF München 8
+FF Unterföhring,FF Ismaning
+FF Unterföhring,FF München-Freimann
+FF Taufkirchen,FF Unterhaching
+FF Taufkirchen,WF IABG
+FF Taufkirchen,FF Oberhaching
+BF München 3,BF München 1
+BF München 3,FF München-Sendling
+BF München 3,BF München 4
+FF Pullach,WF Linde
+FF Pullach,FF München-Solln
+FF München-Forstenried,FF Neuried
+FF München-Forstenried,FF München-Solln
+FF München-Forstenried,BF München 2
+BF München 4,FF München-Stadtmitte
+BF München 4,BF München 3
+BF München 4,BF München 1
+BF München 4,FF München-Moosach
+FF Badersfeld,FF Oberschleißheim
+FF Badersfeld,FF Riedmoos
+FF München-Freimann,FF Garching
+FF München-Freimann,FF München-Oberföhring
+FF München-Freimann,WF Helmholtz
+FF München-Freimann,FF Unterföhring
+FF München-Freimann,FF München-Harthof
+FF München-Freimann,BF München 7
+BF München 1,BF München 5
+BF München 1,BF München 3
+BF München 1,BF München 4
+FF Oberhaching,FF Brunnthal
+FF Oberhaching,FF Grünwald
+FF Oberhaching,FF Oberbiberg
+FF Oberhaching,FF Sauerlach
+FF Oberhaching,FF Taufkirchen
+WF Krauss Maffei,FF München-Ludwigsfeld
+WF Krauss Maffei,FF München-Allach
+FF München-Perlach,BF München 9
+FF München-Perlach,FF München-Michaeliburg
+FF München-Perlach,FF Unterbiberg
+FF München-Perlach,BF München 5
+FF Hofolding,FF Brunnthal
+FF Hofolding,FF Siegertsbrunn
+FF Hofolding,FF Aying
+FF Hofolding,FF Großhelfendorf
+FF Hofolding,FF Höhenkirchen
+FF Hofolding,FF Sauerlach
+BF München 7,WF BMW
+BF München 7,FF München-Feldmoching
+BF München 7,FF München-Freimann
+BF München 7,FF München-Harthof
+FF München-Moosach,FF München-Ludwigsfeld
+FF München-Moosach,WF BMW
+FF München-Moosach,FF München-Feldmoching
+FF München-Moosach,FF München-Obermenzing
+FF München-Moosach,BF München 4
+FF München-Sendling,FF München-Großhadern
+FF München-Sendling,BF München 2
+FF München-Sendling,BF München 3
+FF München-Harthof,FF München-Feldmoching
+FF München-Harthof,WF Helmholtz
+FF München-Harthof,FF München-Freimann
+FF München-Harthof,BF München 7
+FF Eching,FF Günzenhausen
+FF Eching,FF Neufahrn bei Freising
+FF Eching,FF Dietersheim
+FF Eching,WF TUM
+FF Eching,FF Unterschleißheim
+BtF Merck-Schuchardt,FF Siegertsbrunn
+BtF Merck-Schuchardt,FF Hohenbrunn
+BtF Merck-Schuchardt,FF Höhenkirchen
