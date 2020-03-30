@@ -23,7 +23,10 @@ def writeVerbindungen(liste):
 def show(type):
        global G, wehren, color
        wehren = convert.convert()
-       plt.rcParams['keymap.home'].remove('r')
+       try:
+              plt.rcParams['keymap.home'].remove('r')
+       except:
+              pass
 
        try:
               data = csv.reader(open('settings.csv', "r", encoding='ansi'))
