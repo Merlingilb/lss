@@ -415,6 +415,7 @@ def convert():
     password = ""
     http_proxy = ""
     https_proxy = ""
+    url = "leitstellenspiel.de"
     proxy = False
     excludeWehren = []
     try:
@@ -446,6 +447,8 @@ def convert():
             excludeWehren.append(row[1].strip())
             if row[1].strip()=="<<<building id>>>":
                 raise Exception("config.csv has still default values... Change them before starting the program.")
+        if row[0].strip()=="url":
+            url = row[1].strip()
 
     if proxy:
         proxyDict = {
@@ -455,9 +458,14 @@ def convert():
     else:
         proxyDict = {}
 
+    if url.count('www.')>0:
+        url = 'https://' + url
+    else:
+        url = 'https://www.'+url
+
     session = requests.Session()
     parser = etree.HTMLParser()
-    r = session.get('https://www.leitstellenspiel.de/users/sign_in', proxies=proxyDict)
+    r = session.get(url+'/users/sign_in', proxies=proxyDict)
     html = r.content.decode("utf-8")
     tree = etree.parse(StringIO(html), parser=parser)
     refs = tree.xpath('/html/head/meta[@name="csrf-token"]/@content')[0]
@@ -465,10 +473,10 @@ def convert():
 
     payload = {'user[email]': username, 'user[password]': password, 'user[remember_me]': '0',
                'utf8': '✓', 'authenticity_token': refs, 'commit': 'Einloggen'}
-    r = session.post('https://www.leitstellenspiel.de/users/sign_in', data=payload, proxies=proxyDict)
+    r = session.post(url+'/users/sign_in', data=payload, proxies=proxyDict)
     #print(session.cookies.get_dict()['_session_id'])
 
-    r = session.get('https://www.leitstellenspiel.de/api/buildings', proxies=proxyDict)
+    r = session.get(url+'/api/buildings', proxies=proxyDict)
     #print(r.content.decode("utf-8"))
     buildings = json.loads(r.content.decode("utf-8"))
 
@@ -478,7 +486,7 @@ def convert():
             wehr = Feuerwehr(building['caption'],building['latitude'],building['longitude'],building['id'])
             wehren.append(wehr)
 
-    r = session.get('https://www.leitstellenspiel.de/api/vehicles', proxies=proxyDict)
+    r = session.get(url+'/api/vehicles', proxies=proxyDict)
     # print(r.content.decode("utf-8"))
     vehicles = json.loads(r.content.decode("utf-8"))
 
