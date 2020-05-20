@@ -1,6 +1,7 @@
 username,<<<email|username>>>
 password,<<<password>>>
 proxy,<<<yes|no>>>
+url,<<<url of lss in your language | delete if you play in german>>>
 http_proxy,<<<http_proxy|delete line>>>
 https_proxy,<<<https_proxy|delete line>>>
 exclude,<<<building id>>>

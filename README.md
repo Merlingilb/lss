@@ -4,6 +4,7 @@ edit ```config.csv```
 - enter username, password
 - if needed enter proxy information
 - with the ```exclude``` tag you can exclude buildings. Those won't be imported.
+- if you play in a different country than germany, enter the url of the game in your language
 
 start with: ```start.bat```
 
