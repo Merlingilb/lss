@@ -449,6 +449,8 @@ def convert():
                 raise Exception("config.csv has still default values... Change them before starting the program.")
         if row[0].strip()=="url":
             url = row[1].strip()
+            if row[1].strip()=="<<<url of lss in your language | delete if you play in german>>>":
+                raise Exception("config.csv has still default values... Change them before starting the program.")
 
     if proxy:
         proxyDict = {
