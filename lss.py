@@ -1,5 +1,6 @@
 import time
 import matplotlib.pyplot as plt
+import yaml
 import networkx as nx
 import networkx.classes.graph
 import networkx.classes
@@ -36,7 +37,9 @@ def show(type):
        for row in data:
               if row[0] == type:
                      minimum = float(row[1])
-       G = nx.read_yaml("test.yml")
+       G = None
+       with open("test.yml", 'r') as fh:
+              G = yaml.load(fh, Loader=yaml.Loader)
        pos = {}
        color = []
        for key in G._node:
@@ -94,7 +97,8 @@ def show(type):
                             fig.canvas.flush_events()
                             writeVerbindungen(wehren)
                             wehren = convert.convert()
-                            G = nx.read_yaml("test.yml")
+                            with open('test.yml', 'r') as fh:
+                                   G = yaml.load(fh, Loader=yaml.Loader)
                      color = []
                      for key in G._node:
                             if key in click1:color.append('orange')
