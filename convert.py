@@ -8,7 +8,7 @@ from lxml import etree
 
 def getWehr(list, name):
     for wehr in list:
-        if wehr.name == name:
+        if wehr.name.__eq__(name):
             return wehr
     return None
 
@@ -451,6 +451,7 @@ def convert():
             url = row[1].strip()
             if row[1].strip()=="<<<url of lss in your language | delete if you play in german>>>":
                 raise Exception("config.csv has still default values... Change them before starting the program.")
+            
 
     if proxy:
         proxyDict = {
@@ -568,7 +569,8 @@ def convert():
         data += "  " + wehr.name + ":\n"
         for neibor in wehr.neibors:
             data += "    " + neibor.name + ": {}\n"
-        data += "    " + wehr.name + ": {}\n"
+        if len(wehr.neibors) < 1:
+            data += "    " + wehr.name + ": {}\n"
     data += "_node: &id001\n"
     for wehr in wehren:
         data += "  " + wehr.name + ": {pos_x: " + str(wehr.pos_x) + ", pos_y: " + str(wehr.pos_y) + ", tlf: " + str(wehr.getTLFs()) + ", elw1: " + str(wehr.getELW1s()) + ", dlk: " + str(wehr.getDLKs()) + ", rw: " + str(wehr.getRWs()) + ", hlf: " + str(wehr.getHLFs()) + ", gwOel: " + str(wehr.getGWOELs()) + ", gwA: " + str(wehr.getGWAs()) + ", gwS: " + str(wehr.getGWSs()) + ", hoeh: " + str(wehr.getHOEHs()) + ", mess: " + str(wehr.getMESSs()) + ", gwG: " + str(wehr.getGWGs()) + ", elw2: " + str(wehr.getELW2s()) + ", dekonP: " + str(wehr.getDEKONPs()) + ", fwk: " + str(wehr.getFWKs()) + "}\n"
